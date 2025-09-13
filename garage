@@ -178,10 +178,10 @@ sync_commands() {
         return 1
     fi
 
-    local project_commands="$project_path/.claude-code/commands"
+    local project_commands="$project_path/.claude/commands"
 
     if [ ! -d "$project_commands" ]; then
-        echo -e "${YELLOW}No .claude-code/commands directory found in project${NC}"
+        echo -e "${YELLOW}No .claude/commands directory found in project${NC}"
         echo -e "Creating directory..."
         mkdir -p "$project_commands"
     fi
