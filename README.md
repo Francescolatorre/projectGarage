@@ -15,30 +15,42 @@ Proven patterns and practices from successful projects.
 
 ## 🎯 Quick Start
 
-### Using a Claude Command in Your Project
+### Choose Your Integration Pattern
+
+**New to projectGarage?** → [Read the Integration Guide](INTEGRATION_GUIDE.md)
+
+**Need quick setup?** → [Submodule + Direct Usage](integration-patterns/submodule-direct/README.md)
+
+**Large team project?** → [Submodule + Memory Bank](integration-patterns/submodule-memorybank/README.md)
+
+**Just experimenting?** → [Manual Copy](integration-patterns/manual-copy/README.md)
+
+### Quick Integration (Submodule + Direct)
 
 ```bash
-# Browse available commands
-./garage browse claude-commands
+# 1. Add garage to your project
+git submodule add https://github.com/Francescolatorre/projectGarage.git .garage
 
-# Search for specific command
-./garage search "process improvement"
+# 2. Copy setup script and run
+cp .garage/templates/submodule-direct/setup_garage.sh .
+./setup_garage.sh
 
-# Install command to your project
-./garage install process-improve ./your-project/.claude-code/commands/
-
-# Or copy manually
-cp claude-commands/productivity/process-improve.md /path/to/project/.claude-code/commands/
+# 3. Start using commands
+npm run garage:browse
+npm run garage:search -- "process improvement"
 ```
 
-### Contributing a New Command
+### Using Commands
 
 ```bash
-# Add your battle-tested command
-./garage add-command ./path/to/command.md --category productivity
+# Use directly from garage (always latest)
+claude-code --custom .garage/claude-commands/productivity/process-improve.md
 
-# Share learnings
-./garage add-learning "Your insight here" --tags "cli,automation"
+# Import to your project for customization
+./scripts/import_pattern.sh process-improve
+
+# Share your learnings back
+./scripts/share_learning.sh "your insight" productivity
 ```
 
 ## 📂 Structure
@@ -51,10 +63,13 @@ projectGarage/
 │   ├── architecture/       # System design, patterns
 │   ├── ai-integration/     # LLM, AI service patterns
 │   └── devops/             # CI/CD, deployment, monitoring
-├── project-templates/       # Starter templates
-├── patterns/               # Development patterns
-├── learnings/              # Documented insights
-└── scripts/                # Management scripts
+├── integration-patterns/    # Integration approaches for projects
+│   ├── submodule-direct/   # Git submodule + direct usage
+│   ├── submodule-memorybank/ # Git submodule + local cache
+│   └── manual-copy/        # Simple copy approach
+├── templates/              # Setup templates for each pattern
+├── learnings/              # Documented insights from projects
+└── scripts/                # Management and utility scripts
 ```
 
 ## 🏷️ Command Categories
