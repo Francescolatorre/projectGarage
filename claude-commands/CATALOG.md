@@ -25,7 +25,7 @@
 ### DevOps & Deployment
 | Command | Description | Tags | Origin |
 |---------|-------------|------|--------|
-| *(Coming soon)* | | | |
+| [dependabot-merge](devops/dependabot-merge.md) | Automated Dependabot PR review and merge workflow | dependabot, security, automation, github | learnplatform |
 
 ## 🎯 Quick Selection Guide
 
@@ -92,10 +92,10 @@ find claude-commands -name "*.md" -not -name "CATALOG.md"
 ```
 
 ## 📊 Statistics
-- **Total Commands**: 1
+- **Total Commands**: 2
 - **Categories**: 5
 - **Origin Projects**: 1
-- **Last Updated**: 2025-09-13
+- **Last Updated**: 2025-09-15
 
 ---
 
